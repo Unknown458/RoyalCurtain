@@ -1,0 +1,11 @@
+/* ─── App Global Wrapper ─── */
+.royal-app-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--royal-bg);
+}
+
+.royal-page-wrapper {
+  flex: 1;
+}

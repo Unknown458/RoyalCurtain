@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <defs>
+    <linearGradient id="iconGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5C368" />
+      <stop offset="35%" stop-color="#B88E36" />
+      <stop offset="70%" stop-color="#87651C" />
+      <stop offset="100%" stop-color="#694F16" />
+    </linearGradient>
+  </defs>
+  <rect width="100" height="100" rx="20" fill="#FAF7F2" />
+  <rect x="2" y="2" width="96" height="96" rx="18" fill="none" stroke="url(#iconGold)" stroke-width="2" opacity="0.8" />
+  <g transform="translate(18, 10) scale(0.9)">
+    <!-- Curtain Fold Left Stem -->
+    <path d="M 12 8 C 15 8, 17 12, 18 20 C 19 28, 18 40, 17 50 C 16 54, 17 58, 21 62 C 23 64, 24 68, 22 76 C 21 82, 18 88, 15 90 C 13 92, 11 92, 12 90 C 14 84, 16 76, 16 68 C 15 62, 11 56, 10 50 C 9 42, 9 30, 11 20 C 11.5 14, 10 10, 12 8 Z" fill="url(#iconGold)" />
+    <!-- Tie-back -->
+    <path d="M 9 52 Q 17 55 24 53 Q 24 56 17 57 Q 9 55 9 52 Z" fill="#AA7C11" />
+    <!-- Blinds loop -->
+    <path d="M 22 8 C 36 8, 48 10, 54 20 C 60 29, 58 42, 48 48 C 40 52, 30 53, 23 53" stroke="url(#iconGold)" stroke-width="3.2" fill="none" stroke-linecap="round" />
+    <line x1="24" y1="16" x2="48" y2="16" stroke="url(#iconGold)" stroke-width="1.8" stroke-linecap="round" />
+    <line x1="24" y1="23" x2="52" y2="23" stroke="url(#iconGold)" stroke-width="1.8" stroke-linecap="round" />
+    <line x1="23" y1="30" x2="54" y2="30" stroke="url(#iconGold)" stroke-width="1.8" stroke-linecap="round" />
+    <line x1="22" y1="37" x2="52" y2="37" stroke="url(#iconGold)" stroke-width="1.8" stroke-linecap="round" />
+    <line x1="21" y1="44" x2="48" y2="44" stroke="url(#iconGold)" stroke-width="1.8" stroke-linecap="round" />
+    <!-- Sweeping leg -->
+    <path d="M 28 50 C 34 50, 42 54, 46 64 C 50 74, 56 84, 68 89 C 64 90, 58 90, 52 87 C 44 82, 38 72, 34 62 C 32 58, 30 54, 28 52 Z" fill="url(#iconGold)" />
+  </g>
+</svg>
