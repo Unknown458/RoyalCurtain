@@ -8,6 +8,7 @@ import {
 import type { GalleryItem } from '../components/galleryData'
 import ImageModal from '../components/ImageModal'
 import QuoteEstimator from '../components/QuoteEstimator'
+import VideoSection from '../components/VideoSection'
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
 import '../styles/components.css'
 
@@ -428,6 +429,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ─── Living Ambiance in Motion: Cinema Video Showcase ───────── */}
+      <VideoSection />
 
       {/* ─── Interactive Window Estimator ───────────────────────────── */}
       <section className="royal-estimator-section" id="estimator">

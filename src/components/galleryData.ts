@@ -1,11 +1,23 @@
 // ─── Royal Curtains & Blinds - Comprehensive Gallery & Product Catalog ───
-export type ProductCategory = 'all' | 'curtains' | 'blinds' | 'lounge' | 'bedroom' | 'dining' | 'kitchen' | 'studio'
+export type ProductCategory =
+  | 'all'
+  | 'curtains'
+  | 'blinds'
+  | 'videos'
+  | 'lounge'
+  | 'bedroom'
+  | 'dining'
+  | 'kitchen'
+  | 'studio'
 
 export type GalleryItem = {
   id: number
   code: string
   cat: ProductCategory
   type: 'Curtain' | 'Blind' | 'Motorized'
+  mediaType?: 'image' | 'video'
+  duration?: string
+  videoSrc?: string
   title: string
   subtitle: string
   img: string
@@ -302,12 +314,103 @@ export const allGalleryItems: GalleryItem[] = [
     motorizedAvailable: true,
     featured: false,
   },
+
+  // Motion Video Showcases (Interactive In-Action Demonstrations)
+  {
+    id: 101,
+    code: 'RC-VID-01',
+    cat: 'videos',
+    type: 'Motorized',
+    mediaType: 'video',
+    duration: '0:48',
+    videoSrc: '/videos/motorized-lounge.mp4',
+    title: 'Whisper-Quiet Motorized Wave-Fold Tracks',
+    subtitle: 'Lounge Penthouse Suite · Silent Somfy Automated Glide',
+    img: imgBase + 'lounge_verdant.jpg',
+    description:
+      'Experience the effortless elegance of motorized wave-fold drapes with whisper-quiet acceleration and deceleration, perfect uniform S-fold ripples, and seamless smart control via handheld remote, smartphone app, or home automation.',
+    fabric: 'Heavy Belgian Linen & Ethereal Voile Sheer',
+    room: 'Lounge & Penthouse Living',
+    light: 'Motorized Precision Daylight Control',
+    privacy: 'Dual-Layer Complete Privacy',
+    care: 'Zero maintenance motorized Somfy pulley',
+    headingStyles: ['Recessed Ceiling S-Fold Track', 'Surface Mounted Somfy Rail'],
+    motorizedAvailable: true,
+    featured: true,
+  },
+  {
+    id: 102,
+    code: 'RC-VID-02',
+    cat: 'videos',
+    type: 'Curtain',
+    mediaType: 'video',
+    duration: '0:36',
+    videoSrc: '/videos/blackout-voile.mp4',
+    title: 'Dual-Track Daylight Voile to 100% Velvet Blackout',
+    subtitle: 'Master Sanctuary · Total Privacy & Daylight Filtration',
+    img: imgBase + 'bedroom_verdant.jpg',
+    description:
+      'Witness the transformation from a sun-drenched morning sanctuary to complete darkness. The ethereal champagne voile filters harsh Gauteng sunlight, while the forest olive velvet drape provides 100% blackout and thermal insulation.',
+    fabric: '100% Thermal Velvet + Voile Sheer',
+    room: 'Master Bedroom Suite',
+    light: '100% Total Darkness Blackout',
+    privacy: 'Absolute Day & Night Privacy',
+    care: 'Dry clean recommended or gentle steam',
+    headingStyles: ['Double Ceiling Wave Track', 'Double Pinch Pleat'],
+    motorizedAvailable: true,
+    featured: true,
+  },
+  {
+    id: 103,
+    code: 'RC-VID-03',
+    cat: 'videos',
+    type: 'Blind',
+    mediaType: 'video',
+    duration: '0:42',
+    videoSrc: '/videos/basswood-blinds.mp4',
+    title: '50mm Basswood Timber Tilt & Motorized Sunscreens',
+    subtitle: 'Executive Penthouse Study · Precision Angle & Glare Control',
+    img: imgBase + 'blinds_verdant.jpg',
+    description:
+      'See natural timber craftsmanship and modern solar shading work in harmony. Authentic 50mm kiln-dried basswood slats adjust light angles with precision, complemented by automated sunscreen roller blinds that reduce heat and UV glare.',
+    fabric: '50mm Kiln-Dried Natural Timber & UV Sunscreen',
+    room: 'Executive Study & Boardroom',
+    light: 'Precision Micro-Angle Slats',
+    privacy: 'Adjustable Directional Privacy',
+    care: 'Dust with microfiber cloth or wipe clean',
+    headingStyles: ['Standard Enclosed Cassette', 'Motorized Wand Tilt'],
+    motorizedAvailable: true,
+    featured: true,
+  },
+  {
+    id: 104,
+    code: 'RC-VID-04',
+    cat: 'videos',
+    type: 'Curtain',
+    mediaType: 'video',
+    duration: '1:05',
+    videoSrc: '/videos/atelier-tailoring.mp4',
+    title: 'Master Atelier Tailoring, Weighted Hems & Steam Dressing',
+    subtitle: 'Oriental Plaza Workshop · Behind The Craftsmanship',
+    img: imgBase + 'dining_verdant.jpg',
+    description:
+      'Step inside our dedicated Oriental Plaza workshop. See our master tailors meticulously align fabric grains, insert precision corner weights into bottom hems, and vertical-steam each drape so it arrives at your home in immaculate royal perfection.',
+    fabric: 'Hand-Cut Pure Damask, Linen & Crushed Velvet',
+    room: 'Showroom & Workshop Atelier',
+    light: 'Full Custom Lining Thicknesses',
+    privacy: 'Weighted Drape Hanging Perfection',
+    care: 'Professional White-Glove Installation',
+    headingStyles: ['Hand-Sewn Weighted Corners', 'Invisible French Seams'],
+    motorizedAvailable: true,
+    featured: true,
+  },
 ]
 
 export const filterTabs = [
   { slug: 'all', label: 'All Collections' },
   { slug: 'curtains', label: 'Bespoke Curtains' },
   { slug: 'blinds', label: 'Designer Blinds' },
+  { slug: 'videos', label: '🎬 Motion Videos' },
   { slug: 'lounge', label: 'Lounge Curtains' },
   { slug: 'bedroom', label: 'Master Bedroom' },
   { slug: 'dining', label: 'Royal Dining' },

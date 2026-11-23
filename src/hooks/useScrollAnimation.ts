@@ -19,13 +19,27 @@ export function useScrollAnimation() {
     )
 
     const el = ref.current
-    if (el) {
-      el.querySelectorAll('.fade-up, .fade-left, .fade-right, .zoom-in, .stagger-item').forEach(
-        (target) => observer.observe(target)
-      )
+    if (!el) return
+
+    const observeElements = () => {
+      el.querySelectorAll(
+        '.fade-up:not(.visible), .fade-left:not(.visible), .fade-right:not(.visible), .zoom-in:not(.visible), .stagger-item:not(.visible)'
+      ).forEach((target) => observer.observe(target))
     }
 
-    return () => observer.disconnect()
+    observeElements()
+
+    // Observe dynamic elements added after mount (e.g., tab switches or route transitions)
+    const mutationObserver = new MutationObserver(() => {
+      observeElements()
+    })
+
+    mutationObserver.observe(el, { childList: true, subtree: true })
+
+    return () => {
+      observer.disconnect()
+      mutationObserver.disconnect()
+    }
   }, [])
 
   return ref

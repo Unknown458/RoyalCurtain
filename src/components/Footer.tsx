@@ -160,8 +160,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="royal-footer-bottom">
           <p className="copyright-text">
-            © {currentYear} <strong>S and N Curtains CC</strong> T/A Royal Curtains and Blinds. All
-            rights reserved. Oriental Plaza, Fordsburg, Johannesburg.
+            © {currentYear} Royal Curtains. All rights reserved.
           </p>
           <div className="footer-bottom-links">
             <Link to="/">Home</Link>

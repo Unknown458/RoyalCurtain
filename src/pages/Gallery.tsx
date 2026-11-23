@@ -48,6 +48,8 @@ export default function Gallery() {
       matchesCategory = item.type === 'Curtain'
     } else if (activeCategory === 'blinds') {
       matchesCategory = item.type === 'Blind' || item.cat === 'blinds'
+    } else if (activeCategory === 'videos') {
+      matchesCategory = item.mediaType === 'video' || item.cat === 'videos'
     } else if (activeCategory !== 'all') {
       matchesCategory = item.cat === activeCategory
     }
@@ -168,10 +170,10 @@ export default function Gallery() {
             </div>
           ) : (
             <div className="royal-gallery-grid">
-              {filteredItems.map((item, index) => (
+              {filteredItems.map((item) => (
                 <div
                   key={item.id}
-                  className={`gallery-card fade-up delay-${(index % 4) + 1}`}
+                  className="gallery-card"
                   onClick={() => setActiveModalItem(item)}
                   role="button"
                   tabIndex={0}
@@ -183,13 +185,28 @@ export default function Gallery() {
                   }}
                 >
                   <div className="gallery-card-img-box">
-                    <img src={item.img} alt={item.title} loading="lazy" />
+                    <img src={item.img} alt={item.title} loading="eager" decoding="async" />
                     <div className="card-hover-overlay">
-                      <span className="card-zoom-badge">🔍 View Full Details</span>
+                      <span className="card-zoom-badge">
+                        {item.mediaType === 'video'
+                          ? '🎬 Watch Video Demonstration'
+                          : '🔍 View Full Details'}
+                      </span>
                     </div>
+                    {item.mediaType === 'video' && (
+                      <div className="gallery-card-play-btn">
+                        <span className="play-triangle">▶</span>
+                      </div>
+                    )}
                     <div className="card-top-tags">
                       <span className="badge-type">{item.type}</span>
-                      {item.motorizedAvailable && <span className="badge-motor">⚡ Motorized</span>}
+                      {item.mediaType === 'video' ? (
+                        <span className="badge-video-reel">
+                          🎬 Video Reel ({item.duration || '0:48'})
+                        </span>
+                      ) : item.motorizedAvailable ? (
+                        <span className="badge-motor">⚡ Motorized</span>
+                      ) : null}
                     </div>
                     <span className="card-code-tag">{item.code}</span>
                   </div>
